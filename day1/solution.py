@@ -1,5 +1,5 @@
 """
-Day 1
+Day 1: Counting Calories
 """
 
 SAMPLE_INPUT = [
@@ -36,9 +36,17 @@ def countingCalories(elvesCalories):
 def maxCounting(sumsCalories):
     return max(sumsCalories)
 
+"""PART 2"""
+def maxTopThree(sumsCalories):
+    return sum(sorted(sumsCalories)[-3:])
+
 #Test for the Sample Input
 sumsCalories = countingCalories(SAMPLE_INPUT)
 print(maxCounting(sumsCalories))
+#part 2
+print(maxTopThree(sumsCalories))
+
+
 #Test for the given Input
 # open a file
 inputFile = open("input.txt", "r")
@@ -46,3 +54,6 @@ inputFile = open("input.txt", "r")
 lines = inputFile.readlines()
 sumsCalories = countingCalories(lines)
 print(maxCounting(sumsCalories))
+
+#part 2
+print(maxTopThree(sumsCalories))
